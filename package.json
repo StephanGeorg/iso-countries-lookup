@@ -1,5 +1,5 @@
 {
-  "name": "countrycode-lookup",
+  "name": "iso-countries-lookup",
   "version": "0.0.1",
   "description": "Find country codes by country names in multiple languages.",
   "main": "index.js",
