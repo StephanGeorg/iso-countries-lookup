@@ -15,7 +15,8 @@ npm i countrycode-lookup
 ```javascript
 import countryCodeLookup from 'countrycode-lookup';
 
-const code = countryCodeLookup(', Румыния - ');
-// Return RO
+countryCodeLookup(', Румыния - '); // Return RO
+countryCodeLookup(' , DEU') // DE
+countryCodeLookup('uk') // UK 
 
 ```
