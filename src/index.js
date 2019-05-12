@@ -23,6 +23,10 @@ const prepare = (search = '') => {
  *  Lookop for country code
  */
 export default (search = '') => {
+  if (
+    !search
+    || (typeof search !== 'string' && typeof search !== 'number')
+  ) return undefined;
   const langs = countries.langs();
   const countryNameSearch = prepare(search);
   const isAlpha2 = countries.toAlpha2(countryNameSearch);
