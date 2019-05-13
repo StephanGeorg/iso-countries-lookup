@@ -33,3 +33,7 @@ countryCodeLookup(' , DEU') // DE
 countryCodeLookup('uk') // UK
 
 ```
+
+## Returns
+
+The [ISO 3166-1 alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of a country or `undefined`.
