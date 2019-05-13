@@ -1,3 +1,5 @@
 src
 test
 .eslintrc
+data/translations.json
+src/generate
