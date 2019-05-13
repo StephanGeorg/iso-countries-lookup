@@ -48,7 +48,7 @@ export const search = (input = '', type = 'official') => {
 /**
  *  Lookop for country code
  */
-export default (input = '') => {
+const lookup = (input = '') => {
   if (typeof input !== 'string' && typeof input !== 'number') return undefined;
   let isAlpha2 = countries.toAlpha2(input);
   if (isAlpha2) return isAlpha2;
@@ -61,3 +61,6 @@ export default (input = '') => {
   if (result) return result;
   return search(countryNameSearch, 'translations');
 };
+
+export default lookup;
+module.exports = lookup;
