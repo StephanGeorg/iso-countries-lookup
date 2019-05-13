@@ -19,7 +19,7 @@ describe('Succesful returning country codes  ...', () => {
     done();
   });
   it('Search country by name ("Bundesrepublik Deutschland")', (done) => {
-    const code = countryCodeLookup('Deutschland');
+    const code = countryCodeLookup('Bundesrepublik Deutschland');
     expect(code).to.be.equal('DE');
     done();
   });
@@ -35,12 +35,12 @@ describe('Succesful returning country codes  ...', () => {
     done();
   });
   it('Search country by name ("Ελληνική Δημοκρατία")', (done) => {
-    const code = countryCodeLookup('Ελλάδα');
+    const code = countryCodeLookup('Ελληνική Δημοκρατία');
     expect(code).to.be.equal('GR');
     done();
   });
   it('Search country by name ("United states of America")', (done) => {
-    const code = countryCodeLookup('United states');
+    const code = countryCodeLookup('United states of America');
     expect(code).to.be.equal('US');
     done();
   });
