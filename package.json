@@ -2,7 +2,7 @@
   "name": "iso-countries-lookup",
   "version": "1.0.3",
   "description": "Find country codes by country names in multiple languages.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "mocha --require @babel/register",
     "build": "babel src --presets @babel/preset-env --plugins @babel/plugin-transform-runtime --out-dir dist",
