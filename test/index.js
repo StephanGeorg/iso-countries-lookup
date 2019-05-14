@@ -3,16 +3,16 @@ import { expect } from 'chai';
 import countryCodeLookup from '../src/index';
 import generate from '../src/generate';
 
-describe('Succesful returning country codes  ...', () => {
-  /* it('Gen Data', (done) => {
+/* describe('Succesful generating alternative names  ...', () => {
+  it('Gen Data', (done) => {
     const output = generate('Deutschland');
-    // console.log(JSON.stringify(output));
+    console.log(JSON.stringify(output));
     // expect(code).to.be.equal('DE');
     done();
-  }); */
+  });
+}); */
 
-  // return;
-
+describe('Succesful returning country codes  ...', () => {
   it('Search country by name ("Deutschland")', (done) => {
     const code = countryCodeLookup('Deutschland');
     expect(code).to.be.equal('DE');
@@ -21,6 +21,18 @@ describe('Succesful returning country codes  ...', () => {
   it('Search country by name ("Bundesrepublik Deutschland")', (done) => {
     const code = countryCodeLookup('Bundesrepublik Deutschland');
     expect(code).to.be.equal('DE');
+    done();
+  });
+
+  it('Search country by name ("Côte d\'Ivoire")', (done) => {
+    const code = countryCodeLookup('Côte d\'Ivoire');
+    expect(code).to.be.equal('CI');
+    done();
+  });
+
+  it('Search country by name ("republic-of-cote-d\'ivoire")', (done) => {
+    const code = countryCodeLookup("republic-of-cote-d'ivoire");
+    expect(code).to.be.equal('CI');
     done();
   });
 

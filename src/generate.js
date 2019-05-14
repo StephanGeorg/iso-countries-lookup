@@ -2,7 +2,7 @@ import uniq from 'lodash.uniq';
 import isoCountries from 'i18n-iso-countries';
 
 import countries from './data/translations';
-import { prepare } from './index';
+import prepare from './prepare';
 
 export default () => {
   const result = {};

@@ -1,26 +1,8 @@
 import countries from 'i18n-iso-countries';
-import slugify from 'slugify';
 
-import regex from './regex';
+import prepare from './prepare';
+
 import translations from './data/countries.json';
-
-const slugOpts = {
-  replacement: '-',
-  lower: true,
-};
-
-/**
- *  Prepare input value
- *   - trim
- *   - slugify
- *   - remove non-alphabetic character from start and end
- */
-export const prepare = (search = '') => {
-  const input = search.toString().trim();
-  const slug = slugify(input, slugOpts).replace(regex, ''); // remove non-alphabetic character from start and end
-  const output = slug || input.toLowerCase().replace(regex, ''); // slug could be empty if non latin chars only
-  return output;
-};
 
 export const search = (input = '', type = 'official') => {
   const languages = countries.langs();
