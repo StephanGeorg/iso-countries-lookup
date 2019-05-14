@@ -1,6 +1,6 @@
 {
   "name": "iso-countries-lookup",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Find country codes by country names in multiple languages.",
   "main": "./dist/index.js",
   "scripts": {
