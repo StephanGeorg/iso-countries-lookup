@@ -8,6 +8,15 @@
     "build": "babel src --presets @babel/preset-env --plugins @babel/plugin-transform-runtime --out-dir dist --copy-files",
     "prepublish": "npm run build"
   },
+  "keywords": [
+    "country codes",
+    "countries",
+    "iso codes",
+    "iso country code",
+    "ISO 3166",
+    "ISO 3166-1 alpha-2",
+    "ISO 3166-1 alpha-1"
+  ],
   "author": "Stephan Georg <s.georg@nearest.place>",
   "license": "ISC",
   "dependencies": {
