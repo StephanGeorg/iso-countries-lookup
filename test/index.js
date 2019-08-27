@@ -105,6 +105,13 @@ describe('Succesful returning a country code from dirty input ...', () => {
 });
 
 describe('Failed returning a country code  ...', () => {
+
+  it('Search country by "Fakecountry"', (done) => {
+    const code = countryCodeLookup('Fakecountry');
+    expect(code).to.be.equal(undefined);
+    done();
+  });
+
   it('Search country by " - -"', (done) => {
     const code = countryCodeLookup(' - -');
     expect(code).to.be.equal(undefined);
