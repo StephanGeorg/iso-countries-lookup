@@ -19,6 +19,13 @@
   ],
   "author": "Stephan Georg <s.georg@nearest.place>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephanGeorg/iso-countries-lookup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/StephanGeorg/iso-countries-lookup/issues"
+  },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "i18n-iso-countries": "^4.3.1",
