@@ -1,7 +1,8 @@
 import { expect } from 'chai';
 
 import countryCodeLookup from '../src/index';
-import generate from '../src/generate';
+
+// import generate from '../src/generate';
 
 /* describe('Succesful generating alternative names  ...', () => {
   it('Gen Data', (done) => {
@@ -59,7 +60,6 @@ describe('Succesful returning country codes  ...', () => {
 });
 
 
-
 describe('Succesful returning a country code from dirty input ...', () => {
   it('Search country by name (", Румыния - ")', (done) => {
     const code = countryCodeLookup(', Румыния - ');
@@ -105,7 +105,6 @@ describe('Succesful returning a country code from dirty input ...', () => {
 });
 
 describe('Failed returning a country code  ...', () => {
-
   it('Search country by "Fakecountry"', (done) => {
     const code = countryCodeLookup('Fakecountry');
     expect(code).to.be.equal(undefined);
