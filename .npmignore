@@ -2,5 +2,5 @@ src
 test
 .eslintrc
 .babelrc
-data/translations.json
+dist/data/translations.json
 dist/generate.js
