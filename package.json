@@ -1,6 +1,6 @@
 {
   "name": "iso-countries-lookup",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Find country codes by country names in multiple languages.",
   "main": "./dist/index.js",
   "scripts": {
@@ -27,17 +27,17 @@
     "url": "https://github.com/StephanGeorg/iso-countries-lookup/issues"
   },
   "dependencies": {
-    "@babel/runtime": "^7.9.2",
-    "i18n-iso-countries": "^4.3.1",
+    "@babel/runtime": "^7.10.5",
+    "i18n-iso-countries": "^6.0.0",
     "slugify": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
     "@babel/preset-stage-2": "^7.8.3",
-    "@babel/register": "^7.9.0",
+    "@babel/register": "^7.10.5",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
