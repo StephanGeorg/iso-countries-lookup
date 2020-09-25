@@ -1,6 +1,6 @@
 {
   "name": "iso-countries-lookup",
-  "version": "1.0.15",
+  "version": "1.1.0",
   "description": "Find country codes by country names in multiple languages.",
   "main": "./dist/index.js",
   "scripts": {
@@ -44,6 +44,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "lodash.uniq": "^4.5.0",
-    "mocha": "^7.1.1"
+    "mocha": "^7.1.1",
+    "world-countries": "^4.0.0"
   }
 }

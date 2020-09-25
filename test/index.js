@@ -59,7 +59,6 @@ describe('Succesful returning country codes  ...', () => {
   });
 });
 
-
 describe('Succesful returning a country code from dirty input ...', () => {
   it('Search country by name (", Румыния - ")', (done) => {
     const code = countryCodeLookup(', Румыния - ');
@@ -100,6 +99,20 @@ describe('Succesful returning a country code from dirty input ...', () => {
   it('Search country by ISO-3166-1 numeric ("004")', (done) => {
     const code = countryCodeLookup('004');
     expect(code).to.be.equal('AF');
+    done();
+  });
+});
+
+describe('Successful returning a country code by historical name ...', () => {
+  it('Search country by "West Germany"', (done) => {
+    const code = countryCodeLookup('West Germany');
+    expect(code).to.be.equal('DE');
+    done();
+  });
+
+  it('Search country by "Westdeutschland"', (done) => {
+    const code = countryCodeLookup('WEstdeutschland');
+    expect(code).to.be.equal('DE');
     done();
   });
 });

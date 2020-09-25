@@ -1,7 +1,9 @@
 import uniq from 'lodash.uniq';
 import isoCountries from 'i18n-iso-countries';
 
-import countries from './data/translations';
+import countries from 'world-countries';
+import historical from './data/historical.json';
+
 import prepare from './prepare';
 
 export default () => {
@@ -24,6 +26,18 @@ export default () => {
       if (!all.includes(nativeOfficial)) all.push(nativeOfficial);
     });
     result[country.cca2] = uniq(all);
+  });
+
+  // Add historical names
+  historical.forEach((country) => {
+    const all = [];
+    Object.keys(country.translations).forEach((lang) => {
+      country.translations[lang].forEach((altName) => {
+        const altPrepared = prepare(altName);
+        if (!all.includes(altPrepared)) all.push(altPrepared);
+      });
+    });
+    if (all.length) result[country.cca2].push(...uniq(all));
   });
 
   // Exclude already added names from iso-country
