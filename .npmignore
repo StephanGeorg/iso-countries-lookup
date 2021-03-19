@@ -2,6 +2,7 @@ src
 test
 .eslintrc
 .babelrc
+.github
 dist/data/translations.json
 dist/data/historical.json
 dist/generate.js

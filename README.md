@@ -15,7 +15,13 @@ npm i iso-countries-lookup
 
 ```javascript
 import countryCodeLookup from 'iso-countries-lookup';
+```
 
+```
+countryCodeLookup(input, [options]);
+```
+
+```javascript
 // Finding ISO Code from official names (fastest)
 countryCodeLookup('Germany'); // 'DE'
 countryCodeLookup('United States of America'); // 'US'
@@ -38,7 +44,17 @@ countryCodeLookup('uk') // UK
 countryCodeLookup(184) // CK
 countryCodeLookup('004') // AF
 
+// Finding ISO codes from Numeric
+countryCodeLookup(184, { numeric: false }) // undefined
+countryCodeLookup('004', { numeric: false }) // undefined
+
 ```
+
+## Options
+
+Parameter           | Default             | Description
+------------------- | ------------------- | -------------
+numeric             | true                | ISO 3166-1 numeric values in input 
 
 ## Returns
 

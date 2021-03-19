@@ -6,7 +6,7 @@ import translations from './data/countries.json';
 
 export const search = (input = '', type = 'official') => {
   const languages = countries.langs();
-  // itarate through every language to find country name
+  // Iterate through every language to find country name
   for (let i = 0; i < languages.length; i++) {
     const language = languages[i];
     const countryNames = countries.getNames(language);
@@ -28,17 +28,52 @@ export const search = (input = '', type = 'official') => {
 };
 
 /**
- *  Lookop for country code
+ * Check if input is country code
+ * @param {string} input
+ * @param {object} options
+ * @returns {string|undefined}
  */
-const lookup = (input = '') => {
+const checkCodes = (input = '', options = {}) => {
+  if ((typeof input === 'number' || Number.isFinite(Number(input)))) {
+    if (Number(input) > 999) return undefined;
+    if (options.numeric !== false) {
+      const isNumeric = countries.numericToAlpha2(input);
+      if (isNumeric) return isNumeric;
+      return undefined;
+    }
+  }
+  const alpha3 = countries.alpha2ToAlpha3(input.toString().toUpperCase());
+  if (alpha3) return countries.toAlpha2(alpha3);
+  const alpha2 = countries.alpha3ToAlpha2(input.toUpperCase());
+  if (alpha2) return alpha2;
+
+  return undefined;
+};
+
+/**
+ * Lookup country
+ * @param {string} input
+ * @param {object} options
+ * @returns {string|undefined}
+ */
+const lookup = (input = '', options = {}) => {
   if (typeof input !== 'string' && typeof input !== 'number') return undefined;
-  let isAlpha2 = countries.toAlpha2(input);
-  if (isAlpha2) return isAlpha2;
+
+  // Check if its already an iso code
+  let isCode = checkCodes(input, options);
+  if (isCode) return isCode;
+
   const countryNameSearch = prepare(input, true);
   if (!countryNameSearch) return undefined;
-  // check if input is already a ISO code
-  isAlpha2 = countries.toAlpha2(countryNameSearch);
-  if (isAlpha2) return isAlpha2;
+
+  // Check if iso code
+  isCode = checkCodes(countryNameSearch, options);
+  if (isCode) return isCode;
+
+  // Check if wrong country code
+  if (countryNameSearch.length < 4) return undefined;
+
+  // Search code by name
   const result = search(countryNameSearch, 'official');
   if (result) return result;
   return search(countryNameSearch, 'translations');

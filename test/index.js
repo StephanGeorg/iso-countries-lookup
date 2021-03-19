@@ -78,15 +78,27 @@ describe('Succesful returning a country code from dirty input ...', () => {
     done();
   });
 
+  it('Search country by ISO-3166-1 ALPHA-2 ("ro")', (done) => {
+    const code = countryCodeLookup('ro');
+    expect(code).to.be.equal('RO');
+    done();
+  });
+
+  it('Search country by ISO-3166-1 ALPHA-3 ("deu")', (done) => {
+    const code = countryCodeLookup('deu');
+    expect(code).to.be.equal('DE');
+    done();
+  });
+
   it('Search country by ISO-3166-1 ALPHA-3 (" , DEU")', (done) => {
     const code = countryCodeLookup(' , DEU');
     expect(code).to.be.equal('DE');
     done();
   });
 
-  it('Search country by ISO-3166-1 ALPHA-2 (" , uk")', (done) => {
-    const code = countryCodeLookup(' , uk');
-    expect(code).to.be.equal('UK');
+  it('Search country by ISO-3166-1 ALPHA-2 (" , gb")', (done) => {
+    const code = countryCodeLookup(' , gb');
+    expect(code).to.be.equal('GB');
     done();
   });
 
@@ -111,7 +123,7 @@ describe('Successful returning a country code by historical name ...', () => {
   });
 
   it('Search country by "Westdeutschland"', (done) => {
-    const code = countryCodeLookup('WEstdeutschland');
+    const code = countryCodeLookup('Westdeutschland');
     expect(code).to.be.equal('DE');
     done();
   });
@@ -148,6 +160,12 @@ describe('Failed returning a country code  ...', () => {
     done();
   });
 
+  it('Search country by 144444234', (done) => {
+    const code = countryCodeLookup(144444234);
+    expect(code).to.be.equal(undefined);
+    done();
+  });
+
   it('Search country by undefined', (done) => {
     const code = countryCodeLookup(undefined);
     expect(code).to.be.equal(undefined);
@@ -156,6 +174,18 @@ describe('Failed returning a country code  ...', () => {
 
   it('Search country by ""', (done) => {
     const code = countryCodeLookup('');
+    expect(code).to.be.equal(undefined);
+    done();
+  });
+
+  it('Search country by "XX"', (done) => {
+    const code = countryCodeLookup('XX');
+    expect(code).to.be.equal(undefined);
+    done();
+  });
+
+  it('Search country by "004" w/o numeric', (done) => {
+    const code = countryCodeLookup('004', { numeric: false });
     expect(code).to.be.equal(undefined);
     done();
   });

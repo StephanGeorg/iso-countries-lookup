@@ -1,12 +1,12 @@
 import slugify from 'slugify';
 
-import regex from './regex';
-
 const slugOpts = {
   replacement: '-',
   lower: true,
   remove: /[*+~.()'"!:@]/g,
 };
+
+const regex = /^[^\p{Letter}\p{Mark}]*|[^\p{Letter}\p{Mark}]*$/iug;
 
 /**
  *  Prepare input value
