@@ -1,6 +1,6 @@
 {
   "name": "iso-countries-lookup",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Find country codes by country names in multiple languages.",
   "main": "./dist/index.js",
   "scripts": {
@@ -27,24 +27,27 @@
     "url": "https://github.com/StephanGeorg/iso-countries-lookup/issues"
   },
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
-    "i18n-iso-countries": "^6.7.0",
-    "slugify": "^1.5.3"
+    "@babel/runtime": "^7.14.8",
+    "i18n-iso-countries": "^6.8.0",
+    "slugify": "^1.6.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.14.3",
-    "@babel/core": "^7.14.3",
-    "@babel/eslint-parser": "^7.14.3",
-    "@babel/plugin-transform-runtime": "^7.14.3",
-    "@babel/preset-env": "^7.14.2",
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
     "@babel/preset-stage-2": "^7.8.3",
-    "@babel/register": "^7.13.16",
+    "@babel/register": "^7.14.5",
     "chai": "^4.3.4",
-    "eslint": "^7.27.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-import": "^2.24.0",
     "lodash.uniq": "^4.5.0",
-    "mocha": "^8.4.0",
+    "mocha": "^9.0.3",
     "world-countries": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=8"
   }
 }
