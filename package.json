@@ -1,6 +1,6 @@
 {
   "name": "iso-countries-lookup",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Find country codes by country names in multiple languages.",
   "main": "./dist/index.js",
   "scripts": {
@@ -19,11 +19,11 @@
   ],
   "author": "Stephan Georg <s.georg@hey.com>",
   "license": "MIT",
-  "repository": "github:StephanGeorg/staticmaps",
+  "repository": "github:StephanGeorg/iso-countries-lookup",
   "bugs": {
     "url": "https://github.com/StephanGeorg/iso-countries-lookup/issues"
   },
-  "homepage": "https://github.com/StephanGeorg/staticmaps#readme",
+  "homepage": "https://github.com/StephanGeorg/iso-countries-lookup#readme",
   "dependencies": {
     "@babel/runtime": "^7.14.8",
     "i18n-iso-countries": "^6.8.0",
