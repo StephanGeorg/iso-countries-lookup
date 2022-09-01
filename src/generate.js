@@ -1,5 +1,4 @@
 import isoCountries from 'i18n-iso-countries';
-
 import countries from 'world-countries';
 import historical from './data/historical.json';
 
