@@ -1,4 +1,3 @@
-import uniq from 'lodash.uniq';
 import isoCountries from 'i18n-iso-countries';
 
 import countries from 'world-countries';
@@ -25,7 +24,7 @@ export default () => {
       if (!all.includes(nativeCommon)) all.push(nativeCommon);
       if (!all.includes(nativeOfficial)) all.push(nativeOfficial);
     });
-    result[country.cca2] = uniq(all);
+    result[country.cca2] = [...new Set(all)];
   });
 
   // Add historical names
