@@ -35,7 +35,7 @@ export default () => {
         if (!all.includes(altPrepared)) all.push(altPrepared);
       });
     });
-    if (all.length) result[country.cca2].push(...uniq(all));
+    if (all.length) result[country.cca2].push(...new Set(all));
   });
 
   // Exclude already added names from iso-country
